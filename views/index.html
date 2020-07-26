@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+   
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+
+    <title>Login Page</title>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="public/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <form class="form-hire" method="POST" action="/">
+
+        <h1 class="h3 mb-3 font-weight-normal">HIRING PAGE</h1>
+
+        <input type="text" name="candidateName" class="form-control top" placeholder="Name" required autofocus>
+
+        <input type="email" name="candidateEmail" class="form-control bottom" placeholder="Email" required>
+
+        <input type="text" name="candidatePos" class="form-control top" placeholder="Position Filled" required>
+
+        <input type="text" name="candidateQ" class="form-control bottom" placeholder="Highest Qualification" required>
+        <input type="text" name="resumeLink" class="form-control bottom" placeholder="Resume Link" required>
+        <label>
+            <strong>Upload Resume:</strong>
+        </label>
+
+        <input type="file" class="filepond" name="file" />
+        <button class="btn btn-lg btn-primary btn-block button" type="submit">Submit</button>
+
+        <p class="mt-5 mb-3 text-muted">&copy; Eshita Kalsi 2020</p>
+
+    </form>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+
+    <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+
+    <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+    <script>
+        FilePond.registerPlugin(FilePondPluginImagePreview);
+        FilePond.registerPlugin(FilePondPluginImageResize);
+        FilePond.registerPlugin(FilePondPluginFileEncode);
+        const inputElement = document.querySelector('input[type="file"]');
+        const pond = FilePond.create(inputElement);
+        FilePond.parse(document.body);
+
+    </script>
+
+
+</body>
+
+</html>
