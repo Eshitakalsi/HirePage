@@ -4,9 +4,6 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-const path = __dirname + "/views/";
-
-
 app.use(bodyParser.json({
     limit: '50mb'
 }));
@@ -34,7 +31,7 @@ const candidateSchema = new mongoose.Schema({
 const Candidate = mongoose.model("Candidate", candidateSchema);
 
 app.get("/", function (req, res) {
-    res.sendFile(path + "index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 
